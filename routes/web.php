@@ -18,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('blank', function () {
+    return view('backend.pages.blank');
+});
+
 Route::resource('customers', 'CustomerController');
