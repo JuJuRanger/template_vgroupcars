@@ -119,6 +119,37 @@
                 <i class="fas fa-th-large"></i>
             </a>
         </li>
+
+        <!-- Profile Dropdown Menu -->
+        <li class="nav-item dropdown user user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <img src="{{ asset('assets/dist/img/logo_userbig.png') }}" class="user-image img-circle elevation-2 alt="
+                    User Image">
+                {{-- <span class="d-none">John Doe</span> --}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <!-- User image -->
+                <li class="user-header bg-primary">
+                    <img src="{{ asset('assets/dist/img/logo_userbig.png') }}" class="img-circle elevation-2"
+                        alt="User Image">
+
+                    <p>
+                        John Doe - Web Developer
+                        <small>Member since Nov. 2012</small>
+                    </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-block btn-default btn-flat">Profile</a>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a href="#" class="btn btn-block btn-default btn-flat">Sign out</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
     </ul>
 </nav>
-

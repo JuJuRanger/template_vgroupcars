@@ -18,6 +18,22 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'BackendController@index');
+/*
+|--------------------------------------------------------------------------
+| Frontend
+|--------------------------------------------------------------------------
+*/
+Route::get('/', 'FrontendController@index');
+// Route::get('login', 'FrontendController@login');
+// Route::get('register', 'FrontendController@register');
+// Route::get('forgotpass', 'FrontendController@forgotpass');
+
+/*
+|--------------------------------------------------------------------------
+| Backend
+|--------------------------------------------------------------------------
+*/
+
+// Route::get('/', 'BackendController@index');
 
 Route::resource('customers', 'CustomerController');
