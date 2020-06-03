@@ -37,3 +37,9 @@ Route::get('/', 'FrontendController@index');
 // Route::get('/', 'BackendController@index');
 
 Route::resource('customers', 'CustomerController');
+
+
+// Login/Register
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+

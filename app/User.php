@@ -15,8 +15,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+    /*
+     * มีการ Custom Login จากเดิม 'name', 'email', 'password' ******* Day 7 : 2:53:36 *******
+    */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'fullname', 'password', 'gender', 'tel', 'user_image', 'crebyid', 'crebyname', 'isAdmin', 'status'
     ];
 
     /**
