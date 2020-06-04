@@ -17,9 +17,10 @@ class User extends Authenticatable
      */
     /*
      * มีการ Custom Login จากเดิม 'name', 'email', 'password' ******* Day 7 : 2:53:36 *******
+     * เป็นการกำหนด field ว่า field ไหนเป็นการเพิ่มลบ แก้ไข ได้ เอาไว้ทำ register
     */
     protected $fillable = [
-        'email', 'fullname', 'password', 'gender', 'tel', 'user_image', 'crebyid', 'crebyname', 'isAdmin', 'status'
+        'email', 'fullname', 'password', 'gender', 'tel', /*'user_image', 'crebyid', 'crebyname',*/ 'isAdmin', 'status'
     ];
 
     /**

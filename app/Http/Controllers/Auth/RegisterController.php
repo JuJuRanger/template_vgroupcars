@@ -29,7 +29,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป HOME)
+    // protected $redirectTo = RouteServiceProvider::HOME; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป HOME)
+    protected $redirectTo = 'backend'; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป Backend) ### Day 8 20.28 ###
 
     /**
      * Create a new controller instance.
@@ -93,9 +94,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'gender' => $data['gender'],
             'tel' => $data['tel'],
-            'user_image' => $data['user_image'],
-            'crebyid' => $data['crebyid'],
-            'crebyname' => $data['crebyname'],
+            // 'user_image' => $data['user_image'],
+            // 'crebyid' => $data['crebyid'],
+            // 'crebyname' => $data['crebyname'],
             'isAdmin' => $data['isAdmin'],
             'status' => $data['status'],
         ]);

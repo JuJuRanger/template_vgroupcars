@@ -107,11 +107,11 @@
 
                                 <div class="form-check form-check-inline">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="gender" id="gender"
+                                        <input class="form-check-input" type="radio" name="gender" id="genderMale"
                                             value="male"> Male
                                     </label> &nbsp;&nbsp;
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="radio" name="gender" id="gender"
+                                        <input class="form-check-input" type="radio" name="gender" id="genderFemale"
                                             value="female"> Female
                                     </label>
                                 </div>
@@ -140,19 +140,22 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <!--
+                         * รอการแก้ไขหรืออาจย้ายตำแหน่ง เกี่ยวกับ path รูปและเก็บรูปในคลัง
+                        -->
+                        {{-- <div class="form-group row">
                             <label for="user_image"
                                 class="col-md-4 col-form-label text-md-right">{{ __('User_Image') }}</label>
 
                             <div class="col-md-6">
-                                <img src="{{asset('assets/images/no_avatar.jpg')}}" id="output"
+                                <img src="{{asset('assets/images/no_avatar.jpg')}}" id="register_output"
                                     class="img-circle" width="50" height="50">
                                 <span class="btn btn-primary btn-file">
-                                    เลือกไฟล์ <input type="file" name="product_image" id="product_image"
-                                        onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                                    เลือกไฟล์ <input type="file" name="user_image" id="user_image"
+                                        onchange="document.getElementById('register_output').src = window.URL.createObjectURL(this.files[0])">
                                 </span>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group row">
                             <label for="isAdmin"

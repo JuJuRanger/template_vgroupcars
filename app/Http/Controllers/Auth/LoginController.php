@@ -26,7 +26,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป HOME)
+    protected $redirectTo = 'backend'; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป Backend) ### Day 8 20.28 ###
 
     /**
      * Create a new controller instance.
@@ -36,5 +37,12 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    // สร้างฟังก์ชัน Logout
+    public function logout(){
+        // กระบวนตรงนี้เป็นการ clear Session ด้วย
+        Auth()->logout(); // เรียก App\Http\Controllers\Auth จะมี function logout() อยู่ในนั้น
+        return redirect('login'); // ส่งไปหน้า login
     }
 }

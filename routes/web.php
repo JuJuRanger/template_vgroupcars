@@ -34,7 +34,7 @@ Route::get('/', 'FrontendController@index');
 |--------------------------------------------------------------------------
 */
 
-// Route::get('/', 'BackendController@index');
+Route::get('/backend', 'BackendController@index');
 
 Route::resource('customers', 'CustomerController');
 

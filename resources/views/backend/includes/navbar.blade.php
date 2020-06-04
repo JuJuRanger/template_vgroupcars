@@ -145,7 +145,17 @@
                             <a href="#" class="btn btn-block btn-default btn-flat">Profile</a>
                         </div>
                         <div class="col-md-6 text-right">
-                            <a href="#" class="btn btn-block btn-default btn-flat">Sign out</a>
+                            <!--
+                              *  ถ้าสังเกตใน method logout() จะเห็นว่ามันเรียก method post อยู่ การเรียก url('backend/logout') เป็นการ GET
+                              *  วิธีแก้เราจะต้องส่งแบบ post คือเอา form มาครอบ และเปลี่ยนจาก <a> เป็น <button type="submit"> ด้วย
+                              *  Form มาครอบ Buuton และ <form action="" method="post"></form>
+                              *  ใน action ในคำว่า {{ route('logout') }}
+                              *  และห้ามลืม @csrf ต้องส่ง token ไปด้วย ไม่งั้นจะ Error : 419 | Page Expired
+                            -->
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-block btn-default btn-flat">Sign out</button>
+                            </form>
                         </div>
                     </div>
                 </li>
