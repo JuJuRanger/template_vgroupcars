@@ -84,7 +84,7 @@ $(function () {
         borderColor         : '#007bff',
         pointBorderColor    : '#007bff',
         pointBackgroundColor: '#007bff',
-        fill                : false
+        fill                : false,
         // pointHoverBackgroundColor: '#007bff',
         // pointHoverBorderColor    : '#007bff'
       },
@@ -95,9 +95,9 @@ $(function () {
           borderColor         : '#ced4da',
           pointBorderColor    : '#ced4da',
           pointBackgroundColor: '#ced4da',
-          fill                : false
-          // pointHoverBackgroundColor: '#ced4da',
-          // pointHoverBorderColor    : '#ced4da'
+          fill                : false,
+        //   pointHoverBackgroundColor: '#ced4da',
+        //   pointHoverBorderColor    : '#ced4da'
         }]
     },
     options: {

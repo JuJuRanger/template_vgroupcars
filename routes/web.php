@@ -20,6 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
+| Login/Register
+|--------------------------------------------------------------------------
+*/
+Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home'); // ไม่ได้ใช้ตัวนี้แล้ว ไปศึกษาดู
+
+/*
+|--------------------------------------------------------------------------
 | Frontend
 |--------------------------------------------------------------------------
 */
@@ -34,12 +42,40 @@ Route::get('/', 'FrontendController@index');
 |--------------------------------------------------------------------------
 */
 
-Route::get('/backend', 'BackendController@index');
+/*
+|----------template autocomplete-------------------------------------------
+|
+    Route::group([
+        'prefix' => 'admin',
+        'middleware' => ['groupName']
+    ], function () {
 
-Route::resource('customers', 'CustomerController');
+    });
+|--------------------------------------------------------------------------
+*/
 
+/*
+|----USER Auth------------------------------
+*/
+Route::group([
+    'prefix' => 'backend',
+    // 'middleware' => 'auth', // แบบ String
+    'middleware' => ['auth'], //แบบ Array
+], function () {
+    Route::get('blank', 'BackendController@index');
+    Route::get('dashboard', 'BackendController@dashboard');
+    Route::resource('customers', 'CustomerController');
+});
 
-// Login/Register
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
-
+/*
+|----ADMIN Auth------------------------------
+*/
+Route::group([
+    'prefix' => 'backend',
+    // 'middleware' => 'auth',
+    // 'middleware' => ['auth']
+], function () {
+    Route::get('reports', 'BackendController@reports');
+    Route::get('users', 'BackendController@users');
+    Route::get('settings', 'BackendController@settings');
+});

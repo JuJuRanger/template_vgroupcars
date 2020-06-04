@@ -12,6 +12,9 @@ class Kernel extends HttpKernel
      * These middleware are run during every request to your application.
      *
      * @var array
+     *
+     * รายละเอียดเพิ่มเติม Day8 : 44:45
+     * ตรงนี้เป็นการประกาศ middleware แบบ Global เอาไปใช้ได้ทุกที่ ทุก class
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
@@ -27,6 +30,7 @@ class Kernel extends HttpKernel
      * The application's route middleware groups.
      *
      * @var array
+     * ตรงนี้เป็นการประกาศ middleware แบบใน Group เอาไปใช้ได้เฉพาะ web และ api
      */
     protected $middlewareGroups = [
         'web' => [
@@ -51,9 +55,16 @@ class Kernel extends HttpKernel
      * These middleware may be assigned to groups or used individually.
      *
      * @var array
+     * routeMiddleware เป็นการ Protect route บน URL
+     * ตรงนี้เป็นการประกาศ middleware แบบตั้งชื่อให้กับ Class แบบ as
+     *
+     * วิธีใช้งาน เช่น
+     * 'auth' => \App\Http\Middleware\Authenticate::class
+     * ตัวนี้ \App\Http\Middleware\Authenticate::class ได้มีการกรองอะไรไปแล้วบ้างให้เข้าไปดู
+     *
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth' => \App\Http\Middleware\Authenticate::class, // Class นี้จะมีการตรวจว่าถ้า Login แล้วถึงจะทำงานต่อถึงจะไปต่อได้
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

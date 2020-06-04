@@ -10,3 +10,6 @@
 <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 <!-- Customs JS -->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+<!-- OPTIONAL SCRIPTS -->
+<script src="{{asset('assets/plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('assets/dist/js/pages/dashboard3.js')}}"></script>

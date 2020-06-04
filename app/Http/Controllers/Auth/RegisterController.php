@@ -30,7 +30,7 @@ class RegisterController extends Controller
      * @var string
      */
     // protected $redirectTo = RouteServiceProvider::HOME; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป HOME)
-    protected $redirectTo = 'backend'; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป Backend) ### Day 8 20.28 ###
+    protected $redirectTo = 'backend/blank'; // ถ้า Login เสร็จแล้วจะพาไปหน้าไหน (ไป Backend) ### Day 8 20.28 ###
 
     /**
      * Create a new controller instance.
