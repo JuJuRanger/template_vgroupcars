@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Auth::routes();
-// Route::get('/home', 'HomeController@index')->name('home'); // ไม่ได้ใช้ตัวนี้แล้ว ไปศึกษาดู
+Route::get('/home', 'HomeController@index')->name('home'); // ไม่ได้ใช้ตัวนี้แล้ว ไปศึกษาดู
 
 /*
 |--------------------------------------------------------------------------
@@ -55,15 +55,23 @@ Route::get('/', 'FrontendController@index');
 */
 
 /*
-|----USER Auth------------------------------
+|----USER Auth------------------------------user ทั่วไป
 */
 Route::group([
     'prefix' => 'backend',
     // 'middleware' => 'auth', // แบบ String
     'middleware' => ['auth'], //แบบ Array
 ], function () {
-    Route::get('blank', 'BackendController@index');
+    Route::get('/', 'BackendController@index');
+    Route::get('blank', 'BackendController@blank');
     Route::get('dashboard', 'BackendController@dashboard');
+
+    /*
+     * หน้าแจ้งเตือน กรณีสิทธืไม่ถูกต้อง หากพยายามเข้าหน้า admin page
+     * เราตั้ง redirect หน้าชื่อ 'backend/nopermission' ไว้ (อ้างอิงหน้า app\Http\Middleware\Admin.php)
+    */
+    Route::get('nopermission', 'BackendController@nopermission');
+
     Route::resource('customers', 'CustomerController');
 });
 
@@ -72,7 +80,7 @@ Route::group([
 */
 Route::group([
     'prefix' => 'backend',
-    // 'middleware' => 'auth',
+    'middleware' => 'admin', // เป็นกันเรียกชื่อที่เราตั้งเองจาก app\Http\Middleware\Admin.php
     // 'middleware' => ['auth']
 ], function () {
     Route::get('reports', 'BackendController@reports');

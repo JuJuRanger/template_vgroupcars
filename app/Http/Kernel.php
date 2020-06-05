@@ -74,5 +74,17 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        /**
+         * (Day8 : 1:17:08)
+         * วิธี Register Middleware
+         * คำว่า 'admin' ตรงนี้จะเป็นชื่ออะไรก็ได้นะครับ แต่ตั้งให้เหมือนกันดีแล้วจะได้ไม่งง
+         * ต่อมาเราก็ต้องอ้าง path ให้ถูก ลอกมา \App\Http\Middleware\Authenticate::class,
+         * และก็มาเปลี่ยนเป็นของเรานะครับ \App\Http\Middleware\Admin::class, // app\Http\Middleware\Admin.php
+         * ตอนนี้เราก็จะพร้อมเอา Middleware ไปใช้กันได้แล้ว
+         * จากนั้นเราก็ไปที่ web.php ไปใส่ middleware กัน
+         */
+        'admin' => \App\Http\Middleware\Admin::class, // app\Http\Middleware\Admin.php
+
     ];
 }
