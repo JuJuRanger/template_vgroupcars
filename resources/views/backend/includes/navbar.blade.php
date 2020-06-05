@@ -142,7 +142,7 @@
                 <li class="user-footer">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="#" class="btn btn-block btn-default btn-flat">Profile</a>
+                            <a href="{{ url('backend/profile') }}" class="btn btn-block btn-default btn-flat">Profile</a>
                         </div>
                         <div class="col-md-6 text-right">
                             <!--

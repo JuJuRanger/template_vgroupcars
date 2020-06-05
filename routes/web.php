@@ -65,6 +65,7 @@ Route::group([
     Route::get('/', 'BackendController@index');
     Route::get('blank', 'BackendController@blank');
     Route::get('dashboard', 'BackendController@dashboard');
+    Route::get('profile', 'BackendController@profile');
 
     /*
      * หน้าแจ้งเตือน กรณีสิทธืไม่ถูกต้อง หากพยายามเข้าหน้า admin page

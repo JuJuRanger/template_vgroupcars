@@ -15,6 +15,9 @@ class BackendController extends Controller
     public function dashboard(){
         return view('backend.pages.dashboard');
     }
+    public function profile(){
+        return view('backend.pages.profile');
+    }
     public function reports(){
         return view('backend.pages.reports');
     }

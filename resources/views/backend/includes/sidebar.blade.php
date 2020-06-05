@@ -23,9 +23,10 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
-       with font-awesome or any other icon font library -->
-                <li class="nav-item has-treeview {{-- menu-open --}}">
-                    <a href="#" class="nav-link {{-- active --}}">
+            with font-awesome or any other icon font library -->
+                <li
+                    class="nav-item has-treeview {{ (request()->segment(2) == 'dashboard' || 'blank') ? 'menu-open' : '' }}{{-- menu-open --}}">
+                    <a href="#" class="nav-link {{-- (request()->segment(2)=='dashboard'||'blank')?'active':'' --}}{{-- active --}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -34,13 +35,13 @@
                     </a>
                     <ul class="nav nav-treeview ml-4">
                         <li class="nav-item">
-                            <a href="{{ url('backend/dashboard') }}" class="nav-link {{-- active --}}">
+                            <a href="{{ url('backend/dashboard') }}" class="nav-link {{ (request()->segment(2) == 'dashboard') ? 'active' : '' }}{{-- active --}}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Dashboard v1</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('backend/blank') }}" class="nav-link">
+                            <a href="{{ url('backend/blank') }}" class="nav-link {{ (request()->segment(2) == 'blank') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Dashboard v2</p>
                             </a>
@@ -111,7 +112,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">ADMIN SETTING</li>
+                @if (Auth::user()->isAdmin == 1)
+                <li class="nav-header">ADMIN MANAGEMENT</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-calendar-alt"></i>
@@ -221,6 +223,19 @@
                         </li>
                     </ul>
                 </li>
+                @endif
+
+                <br>
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-block btn-default">
+
+                        <span><i class="nav-icon fas fa-sign-out-alt mr-1"></i>Logout</span>
+                    </button>
+                </form>
+                <br>
+
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
