@@ -134,7 +134,7 @@
                         alt="User Image">
 
                     <p>
-                        John Doe - Web Developer
+                        {{ auth()->user()->fullname }}
                         <small>Member since Nov. 2012</small>
                     </p>
                 </li>

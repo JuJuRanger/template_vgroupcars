@@ -46,8 +46,6 @@
 <!-- ./wrapper -->
 
 @include('frontend.includes.footer_script')
-
 @yield('customscript')
-
 </body>
 </html>

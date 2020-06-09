@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Customer;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class TrackingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.customers.index');
+        //
     }
 
     /**
@@ -24,7 +23,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return 'this is create';
+        //
     }
 
     /**
@@ -35,51 +34,51 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        return 'this is store';
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Customer  $customer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $customer)
+    public function show($id)
     {
-        return 'this is show';
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\Customer  $customer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customer)
+    public function edit($id)
     {
-        return 'this is edit';
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Customer  $customer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, $id)
     {
-        return 'this is update';
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Customer  $customer
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function destroy($id)
     {
-        return 'this is destroy';
+        //
     }
 }

@@ -11,11 +11,18 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('assets/dist/img/logo_userbig.png') }}" class="img-circle elevation-2"
-                    alt="User Image">
+                {{-- <img src="{{ asset('assets/dist/img/logo_userbig.png') }}" class="img-circle elevation-2"
+                    alt="User Image"> --}}
             </div>
             <div class="info">
-                <a href="#" class="d-block">JuJu..Ranger</a>
+                <a href="#" class="d-block mb-2">{{ auth()->user()->fullname }}</a>
+                <small class="text-light">
+                    อีเมล: {{ auth()->user()->email }}
+                    <br>
+                    บทบาท: {{-- {{ auth()->user()->getRoleNames()[0] }} --}}
+                    {{-- Trick เขียนเรียกแบบย้อน belongsTo และเรากำหนด belongsTo ที่ ControllerProfile ให้มันแล้วนั่นเอง--}}
+                    {{-- {{ App\Profile::where('user_id', auth()->user()->id)->first()->user->email }} --}}
+                </small>
             </div>
         </div>
 
@@ -25,7 +32,7 @@
                 <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
                 <li
-                    class="nav-item has-treeview {{ (request()->segment(2) == 'dashboard' || 'blank') ? 'menu-open' : '' }}{{-- menu-open --}}">
+                    class="nav-item has-treeview {{ (request()->segment(2) == 'dashboard') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'blank') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{-- (request()->segment(2)=='dashboard'||'blank')?'active':'' --}}{{-- active --}}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -33,7 +40,7 @@
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview ml-4">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('backend/dashboard') }}" class="nav-link {{ (request()->segment(2) == 'dashboard') ? 'active' : '' }}{{-- active --}}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -48,7 +55,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
+                <li class="nav-item has-treeview {{ (request()->segment(2) == 'customers') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
@@ -56,29 +63,17 @@
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview ml-4">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('backend/customers') }}" class="nav-link {{ (request()->segment(2) == 'customers') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>General Elements</p>
+                                <p>Customers</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Advanced Elements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Editors</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Validation</p>
                             </a>
                         </li>
                     </ul>
@@ -91,7 +86,7 @@
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview ml-4">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -131,7 +126,7 @@
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview ml-4">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -182,7 +177,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview">
+                <li class="nav-item has-treeview {{ (request()->segment(2) == 'reports') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'users') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'settings') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-plus-square"></i>
                         <p>
@@ -190,21 +185,21 @@
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview ml-4">
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('backend/reports') }}" class="nav-link">
+                            <a href="{{ url('backend/reports') }}" class="nav-link {{ (request()->segment(2) == 'reports') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Reports</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('backend/users') }}" class="nav-link">
+                            <a href="{{ url('backend/users') }}" class="nav-link {{ (request()->segment(2) == 'users') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Users</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('backend/settings') }}" class="nav-link">
+                            <a href="{{ url('backend/settings') }}" class="nav-link {{ (request()->segment(2) == 'settings') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Settings</p>
                             </a>
