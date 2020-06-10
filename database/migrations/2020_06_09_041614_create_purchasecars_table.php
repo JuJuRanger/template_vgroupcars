@@ -15,23 +15,23 @@ class CreatePurchasecarsTable extends Migration
     {
         Schema::create('purchasecars', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('purchasecar_type_monney');
-            $table->string('purchasecar_brand');
-            $table->string('purchasecar_model');
+            $table->string('purchasecar_type_monney');
+            $table->integer('purchasecar_brand');
+            $table->integer('purchasecar_model');
             $table->string('purchasecar_color');
-            $table->string('purchasecar_downpayment');
-            $table->string('purchasecar_payment');
-            $table->integer('purchasecar_guarantor');
+            $table->integer('purchasecar_downpayment');
+            $table->integer('purchasecar_payment');
+            $table->boolean('purchasecar_guarantor');
             $table->string('purchasecar_job_guarantor');
-            $table->integer('purchasecar_debt');
+            $table->boolean('purchasecar_debt');
             $table->string('purchasecar_typedebt');
             $table->string('purchasecar_debt_namefinance');
-            $table->string('purchasecar_debt_howmany');
-            $table->integer('purchasecar_blacklist');
-            $table->integer('purchasecar_compareprice');
+            $table->integer('purchasecar_debt_howmany');
+            $table->boolean('purchasecar_blacklist');
+            $table->boolean('purchasecar_compareprice');
             $table->string('purchasecar_comparecompanyname');
             $table->string('purchasecar_offercampaign');
-            $table->integer('purchasecar_willingness_to_campaign');
+            $table->tinyInteger('purchasecar_willingness_to_campaign');
             $table->timestamps();
         });
     }
