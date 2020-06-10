@@ -21,10 +21,10 @@ class CreateSalecarsTable extends Migration
             $table->string('salecar_color');
             $table->string('salecar_transmission');
             $table->string('salecar_year');
-            $table->string('salecar_mile');
+            $table->integer('salecar_mile');
             $table->string('salecar_carid');
             $table->string('salecar_province');
-            $table->string('salecar_statusbook');
+            $table->boolean('salecar_statusbook');
             $table->decimal('salecar_statusbook_no_financehowmanybaht', 10, 2);
             $table->integer('salecar_statusbook_no_financehowmanymonth');
             $table->string('salecar_statusbook_no_namefinance');

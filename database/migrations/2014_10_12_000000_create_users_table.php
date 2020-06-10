@@ -22,11 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('gender',16)->nullable();
             $table->string('tel',32)->nullable();
             $table->string('user_image',64)->default('no_avatar.jpg');
-            $table->integer('crebyid')->nullable();
+            $table->tinyInteger('crebyid')->nullable();
             $table->string('crebyname')->nullable();
-            $table->integer('team')->nullable();
+            $table->tinyInteger('team')->nullable();
             $table->boolean('isAdmin')->nullable();
-            $table->integer('status');
+            $table->boolean('status');
             $table->rememberToken();
             $table->timestamps();
         });
