@@ -97,6 +97,7 @@ class RegisterController extends Controller
             // 'user_image' => $data['user_image'],
             // 'crebyid' => $data['crebyid'],
             // 'crebyname' => $data['crebyname'],
+            'team' => $data['team'],
             'isAdmin' => $data['isAdmin'],
             'status' => $data['status'],
         ]);
