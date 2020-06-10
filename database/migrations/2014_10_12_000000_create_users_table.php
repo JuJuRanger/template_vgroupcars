@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Model\Salecar;
+
 class CreateUsersTable extends Migration
 {
     /**
@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('user_image',64)->default('no_avatar.jpg');
             $table->integer('crebyid')->nullable();
             $table->string('crebyname')->nullable();
+            $table->string('team')->nullable();
             $table->boolean('isAdmin')->nullable();
             $table->integer('status');
             $table->rememberToken();

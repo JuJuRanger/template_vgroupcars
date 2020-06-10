@@ -20,7 +20,7 @@ class User extends Authenticatable
      * เป็นการกำหนด field ว่า field ไหนเป็นการเพิ่มลบ แก้ไข ได้ เอาไว้ทำ register
     */
     protected $fillable = [
-        'email', 'fullname', 'password', 'gender', 'tel', /*'user_image', 'crebyid', 'crebyname',*/ 'isAdmin', 'status'
+        'email', 'fullname', 'password', 'gender', 'tel', /*'user_image', 'crebyid', 'crebyname',*/ 'team', 'isAdmin', 'status'
     ];
 
     /**

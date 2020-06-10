@@ -158,6 +158,32 @@
                         </div> --}}
 
                         <div class="form-group row">
+                            <label for="team"
+                                class="col-md-4 col-form-label text-md-right">{{ __('Team') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select class="form-control" name="team" id="team">
+                                    <option value="0">No Team</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                    <option value="7">G</option>
+                                    <option value="8">H</option>
+                                </select>
+
+                                @if ($errors->has('team'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('team') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="isAdmin"
                                 class="col-md-4 col-form-label text-md-right">{{ __('isAdmin') }}</label>
 
