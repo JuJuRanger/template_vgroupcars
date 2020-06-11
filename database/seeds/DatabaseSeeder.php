@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             SalecarTableSeeder::class,
             PurchasecarTableSeeder::class,
+            TrackingTableSeeder::class,
         ]);
     }
 }

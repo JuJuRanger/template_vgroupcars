@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Model\Tracking;
 
 class TrackingTableSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class TrackingTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(Tracking::class, 50)->create();
     }
 }

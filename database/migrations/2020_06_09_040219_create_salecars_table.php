@@ -15,25 +15,25 @@ class CreateSalecarsTable extends Migration
     {
         Schema::create('salecars', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('salecar_brand');
-            $table->integer('salecar_model');
-            $table->string('salecar_color');
-            $table->string('salecar_transmission');
-            $table->string('salecar_year');
-            $table->integer('salecar_mile');
-            $table->string('salecar_carid');
-            $table->string('salecar_province');
-            $table->boolean('salecar_statusbook');
-            $table->decimal('salecar_statusbook_no_financehowmanybaht', 10, 2);
-            $table->integer('salecar_statusbook_no_financehowmanymonth');
-            $table->string('salecar_statusbook_no_namefinance');
-            $table->string('salecar_historyclaim');
-            $table->string('salecar_installgas');
-            $table->string('salecar_currentdrivecar');
-            $table->tinyInteger('salecar_yournumofcar');
-            $table->tinyInteger('salecar_howlongused');
-            $table->decimal('salecar_cusrequest_saleprice', 10, 2);
-            $table->decimal('salecar_startprprice', 10, 2);
+            $table->integer('salecar_brand')->comment('ยี่ห้อ');
+            $table->integer('salecar_model')->nullable()->comment('รุ่น');
+            $table->string('salecar_color')->nullable()->comment('สีรถยนต์');
+            $table->string('salecar_transmission')->nullable()->comment('เกียร์');
+            $table->string('salecar_year')->nullable()->comment('ปีจดทะเบียน');
+            $table->integer('salecar_mile')->nullable()->comment('เลขไมล์');
+            $table->string('salecar_carid')->nullable()->comment('เลขทะเบียน');
+            $table->string('salecar_province')->nullable()->comment('จังหวัด');
+            $table->boolean('salecar_statusbook')->comment('สถานะเล่มทะเบียน');
+            $table->decimal('salecar_statusbook_no_financehowmanybaht', 10, 2)->nullable()->comment('มียอดติดผ่อนเดือนละเท่าไหร่');
+            $table->integer('salecar_statusbook_no_financehowmanymonth')->nullable()->comment('กี่งวด');
+            $table->string('salecar_statusbook_no_namefinance')->nullable()->comment('ชื่อไฟแนนซ์');
+            $table->string('salecar_historyclaim')->nullable()->comment('ประวัติการชน');
+            $table->string('salecar_installgas')->nullable()->comment('ติดตั้งแก๊ส');
+            $table->string('salecar_currentdrivecar')->nullable()->comment('ข้อมูลรถปัจจุบันที่ใช้อยู่');
+            $table->tinyInteger('salecar_yournumofcar')->nullable()->comment('คันที่เท่าไหร่');
+            $table->tinyInteger('salecar_howlongused')->nullable()->comment('อายุการใช้งาน');
+            $table->decimal('salecar_cusrequest_saleprice', 10, 2)->nullable()->comment('ราคาที่ลูกค้าต้องการขาย');
+            $table->decimal('salecar_startprprice', 10, 2)->nullable()->comment('ราคาที่ให้เบื้องต้น');
             $table->timestamps();
         });
     }
