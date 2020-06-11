@@ -21,7 +21,7 @@ $factory->define(Salecar::class, function (Faker $faker) {
         'salecar_statusbook_no_namefinance' => $faker->company,
         'salecar_historyclaim' => $faker->text($maxNbChars = 20),
         'salecar_installgas' => $faker->randomElement($array = array('NGV', 'LPG')),
-        'salecar_currentdrivecar' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'salecar_currentdrivecar' => $faker->randomElement($array = array('มือหนึ่ง','มือสอง')),
         'salecar_yournumofcar' => $faker->numberBetween($min = 1, $max = 5),
         'salecar_howlongused' => $faker->numberBetween($min = 1, $max = 20),
         'salecar_cusrequest_saleprice' => $faker->randomFloat($nbMaxDecimals = -3, $min = 50000, $max = 300000),

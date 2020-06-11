@@ -20,18 +20,18 @@ class CreateCustomerTable extends Migration
              * ข้อมูลลูกค้า.
              */
 
-            $table->string('name');
-            $table->string('tel')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('email')->nullable();
-            $table->string('sourcecustomer')->nullable(); // แหล่งที่มา
-            $table->string('sourcecustomer_etc')->nullable(); // แหล่งที่มาอื่นๆ
-            $table->text('address')->nullable();
-            $table->string('occupation')->nullable();
-            $table->string('province')->nullable();
-            $table->integer('interestcus')->nullable(); //need
-            $table->string('expectchangecar')->nullable();
-            $table->text('detail')->nullable(); // บันทึกช่วยจำอื่นๆ หน้าแรก
+            $table->string('name')->comment('ชื่อ-สกุล ลูกค้า');
+            $table->string('tel')->nullable()->comment('เบอร์โทรศัพท์');
+            $table->string('facebook')->nullable()->comment('เฟสบุ๊ค');
+            $table->string('email')->nullable()->comment('อีเมลล์');
+            $table->string('sourcecustomer')->nullable()->comment('แหล่งที่มา');
+            $table->string('sourcecustomer_etc')->nullable()->comment('แหล่งที่มาอื่นๆ');
+            $table->text('address')->nullable()->comment('ที่อยู่ลูกค้า');
+            $table->string('occupation')->nullable()->comment('อาชีพของลูกค้า');
+            $table->string('province')->nullable()->comment('อยู่จังหวัดไหน');
+            $table->integer('interestcus')->nullable()->comment('ความต้องการ/ความสนใจ ของลูกค้า'); //ซื้อ1,2/ขาย/trade
+            $table->string('expectchangecar')->nullable()->comment('แนวโน้มคาดว่าจะเปลี่ยนรถ');
+            $table->text('detail')->nullable()->comment('บันทึกช่วยจำอื่นๆ');
 
             /**
              * ข้อมูล User (พนักงานขาย)
