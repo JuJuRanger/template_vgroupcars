@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Model\Customer;
+use App\Model\Purchasecar;
+use App\Model\Salecar;
+use App\Model\Tracking;
+use App\User;
+
 class BackendController extends Controller
 {
     public function index(){
@@ -14,6 +20,20 @@ class BackendController extends Controller
     }
     public function dashboard(){
         return view('backend.pages.dashboard');
+    }
+    public function dashboard_management(){
+        $countRowCustomer = Customer::count();
+        $countRowPurchasecar = Purchasecar::count();
+        $countRowSalecar = Customer::count();
+        $countRowTracking = Tracking::count();
+        $countRowUser = User::count();
+        return view('backend.pages.dashboard_management', [
+            'countRowCustomer' => $countRowCustomer,
+            'countRowPurchasecar' => $countRowPurchasecar,
+            'countRowSalecar' => $countRowSalecar,
+            'countRowTracking' => $countRowTracking,
+            'countRowUser' => $countRowUser,
+        ]);
     }
     public function profile(){
         return view('backend.pages.profile');

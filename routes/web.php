@@ -79,6 +79,7 @@ Route::group([
     'middleware' => 'admin', // เป็นกันเรียกชื่อที่เราตั้งเองจาก app\Http\Middleware\Admin.php
     // 'middleware' => ['auth']
 ], function () {
+    Route::get('dashboard_management', 'BackendController@dashboard_management');
     Route::get('reports', 'BackendController@reports');
     Route::get('users', 'BackendController@users');
     Route::get('settings', 'BackendController@settings');

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Customer;
 use Illuminate\Http\Request;
+use App\Model\Customer;
 
 class CustomerController extends Controller
 {
@@ -14,7 +14,26 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.customers.index');
+        $customers = Customer::all();
+        // $countRow = Customer::count(); // 20
+
+        return $customers;
+
+        /**
+         * ####################################
+         * return แบบโยนตัวเดียว single
+         * ####################################
+        */
+        // return view('backend.pages.customers.index')->with('customer', $customer);
+
+        /**
+         * ####################################
+         * return แบบหลายตัวแปร multi
+         * ####################################
+        */
+        // return view('backend.pages.customers.index', [
+        //     'customer' => $customer,
+        // ]);
     }
 
     /**

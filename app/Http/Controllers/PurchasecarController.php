@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Purchasecar;
 use Illuminate\Http\Request;
 
-class PurchaseController extends Controller
+class PurchasecarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,10 +41,10 @@ class PurchaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Model\Purchasecar  $purchasecar
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Purchasecar $purchasecar)
     {
         //
     }
@@ -51,10 +52,10 @@ class PurchaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Model\Purchasecar  $purchasecar
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Purchasecar $purchasecar)
     {
         //
     }
@@ -63,10 +64,10 @@ class PurchaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Model\Purchasecar  $purchasecar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Purchasecar $purchasecar)
     {
         //
     }
@@ -74,10 +75,10 @@ class PurchaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Model\Purchasecar  $purchasecar
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Purchasecar $purchasecar)
     {
         //
     }
