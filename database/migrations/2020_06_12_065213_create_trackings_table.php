@@ -24,6 +24,18 @@ class CreateTrackingsTable extends Migration
             $table->date('tracking_pointcontactnext_date')->comment('วันที่การติดต่อในครั้งถัดไป');
             $table->time('tracking_pointcontactnext_time', 0)->nullable()->comment('เวลาการติดต่อในครั้งถัดไป');
             $table->string('tracking_pointcontactnext_etc')->nullable()->comment('จุดประสงค์ในการติดต่อในครั้งถัดไป_อื่นๆ');
+
+            /**
+             * การติดตาม -> ลูกค้า.
+             */
+
+            $table->unsignedInteger('customer_id')->nullable();
+            $table->foreign('customer_id')->references('id')->on('customers');
+
+            /**
+             * อื่นๆ.
+             */
+
             $table->timestamps();
         });
     }

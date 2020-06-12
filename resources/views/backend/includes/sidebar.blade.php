@@ -118,7 +118,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
+                <li class="nav-item has-treeview {{ (request()->segment(2) == 'dashboard_management') ? 'menu-open' : '' }} ">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
@@ -127,6 +127,12 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('backend/dashboard_management') }}" class="nav-link {{ (request()->segment(2) == 'dashboard_management') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Dashboard Management</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -177,7 +183,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview {{ (request()->segment(2) == 'dashboard_management') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'reports') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'users') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'settings') ? 'menu-open' : '' }}">
+                <li class="nav-item has-treeview {{ (request()->segment(2) == 'reports') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'users') ? 'menu-open' : '' }} {{ (request()->segment(2) == 'settings') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-plus-square"></i>
                         <p>
@@ -187,21 +193,15 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('backend/dashboard_management') }}" class="nav-link {{ (request()->segment(2) == 'dashboard_management') ? 'active' : '' }}">
+                            <a href="{{ url('backend/users') }}" class="nav-link {{ (request()->segment(2) == 'users') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard Management</p>
+                                <p>Users</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url('backend/reports') }}" class="nav-link {{ (request()->segment(2) == 'reports') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Reports</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('backend/users') }}" class="nav-link {{ (request()->segment(2) == 'users') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Users</p>
                             </a>
                         </li>
                         <li class="nav-item">

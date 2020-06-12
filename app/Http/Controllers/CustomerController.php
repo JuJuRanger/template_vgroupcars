@@ -14,10 +14,11 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::all();
+        // $customers = Customer::all();
+        $customers = Customer::orderBy('id','desc')->paginate(10);
         // $countRow = Customer::count(); // 20
 
-        return $customers;
+        // return $customers;
 
         /**
          * ####################################
@@ -31,9 +32,9 @@ class CustomerController extends Controller
          * return แบบหลายตัวแปร multi
          * ####################################
         */
-        // return view('backend.pages.customers.index', [
-        //     'customer' => $customer,
-        // ]);
+        return view('backend.pages.customers.index', [
+            'customers' => $customers,
+        ]);
     }
 
     /**

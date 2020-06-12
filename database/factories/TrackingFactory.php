@@ -15,5 +15,6 @@ $factory->define(Tracking::class, function (Faker $faker) {
         'tracking_pointcontactnext_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'tracking_pointcontactnext_time' => $faker->time($format = 'H:i:s', $max = 'now'),
         // 'tracking_pointcontactnext_etc' => $faker->xxxxx,
+        'customer_id' => factory(App\Model\Customer::class),
     ];
 });

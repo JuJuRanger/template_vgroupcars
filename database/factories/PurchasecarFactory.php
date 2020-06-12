@@ -25,5 +25,6 @@ $factory->define(Purchasecar::class, function (Faker $faker) {
         'purchasecar_comparecompanyname' => $faker->company,
         'purchasecar_offercampaign' => $faker->randomElement($array = array('ผ่อนน้อย','ดาวน์น้อย','ผ่อน 0%','ดอกเบี้ยต่ำ','ไม่มีคนค้ำประกัน')),
         'purchasecar_willingness_to_campaign' => $faker->numberBetween($min = 0, $max = 5),
+        'customer_id' => factory(App\Model\Customer::class),
     ];
 });

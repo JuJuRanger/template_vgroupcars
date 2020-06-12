@@ -12,6 +12,6 @@ class SalecarTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Salecar::class, 50)->create();
+        factory(Salecar::class, 80)->create();
     }
 }

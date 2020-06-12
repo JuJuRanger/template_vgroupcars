@@ -31,7 +31,6 @@
                     <i class="fas fa-plus"></i> &nbsp;เพิ่มลูกค้าใหม่
                 </a>
             </h3>
-            <span class="ml-5">จำนวนลูกค้าทั้งหมด {{ $customers->total() }} ราย</span>
 
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
@@ -74,43 +73,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($customers as $item)
-                    <tr>
-                        <td>
-                            {{ $item->id }}
-                        </td>
-                        <td>
-                            {{ $item->name }}
-                        </td>
-                        <td>
-                            {{ $item->tel }}
-                        </td>
-                        <td>
-                            4
-                        </td>
-                        <td>
-                            5
-                        </td>
-                        <td>
-                            {{ number_format(60000, 2) }}
-                        </td>
-                        <td>
-                            7
-                        </td>
-                        <td>
-                            8
-                        </td>
-                        <td>
-                            9
-                        </td>
-                        <td class="text-right">
-                            Edit Delete
-                        </td>
-                    </tr>
-                    @endforeach
+
                 </tbody>
             </table>
-            <div class="mt-3" style="padding-left: 40%;">{{ $customers->links() }}</div>
+            <div class="mt-3" style="padding-left: 40%;">{{-- $products->links() --}}</div>
         </div>
         <!-- /.card-body -->
     </div>

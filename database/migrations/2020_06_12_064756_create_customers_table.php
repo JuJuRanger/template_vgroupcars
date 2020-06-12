@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomerTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -38,28 +38,8 @@ class CreateCustomerTable extends Migration
              */
 
             $table->unsignedInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-            /**
-             * สำหรับลูกค้าที่สนใจขายรถมือสอง.
-             */
-
-            $table->unsignedInteger('salecar_id')->nullable();
-            $table->foreign('salecar_id')->references('id')->on('salecars')->onDelete('cascade');
-
-            /**
-             * สำหรับลูกค้าที่สนใจซื้อรถ.
-             */
-
-            $table->unsignedInteger('purchasecar_id')->nullable();
-            $table->foreign('purchasecar_id')->references('id')->on('purchasecars')->onDelete('cascade');
-
-            /**
-             * การติดตาม.
-             */
-
-            $table->unsignedInteger('tracking_id')->nullable();
-            $table->foreign('tracking_id')->references('id')->on('trackings')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             /**
              * อื่นๆ.

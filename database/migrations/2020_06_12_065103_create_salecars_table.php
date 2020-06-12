@@ -34,6 +34,19 @@ class CreateSalecarsTable extends Migration
             $table->tinyInteger('salecar_howlongused')->nullable()->comment('อายุการใช้งาน');
             $table->decimal('salecar_cusrequest_saleprice', 10, 2)->nullable()->comment('ราคาที่ลูกค้าต้องการขาย');
             $table->decimal('salecar_startprprice', 10, 2)->nullable()->comment('ราคาที่ให้เบื้องต้น');
+
+
+            /**
+             * สำหรับลูกค้าที่สนใจขายรถมือสอง. -> ลูกค้า
+             */
+
+            $table->unsignedInteger('customer_id')->nullable();
+            $table->foreign('customer_id')->references('id')->on('customers');
+
+            /**
+             * อื่นๆ.
+             */
+
             $table->timestamps();
         });
     }

@@ -33,6 +33,18 @@ class CreatePurchasecarsTable extends Migration
             $table->string('purchasecar_comparecompanyname')->nullable()->comment('ชื่อบริษัทที่เปรียบเทียบ');
             $table->string('purchasecar_offercampaign')->nullable()->comment('แคมเปญที่เสนอลูกค้า');
             $table->tinyInteger('purchasecar_willingness_to_campaign')->nullable()->comment('ระดับความพึงพอใจกับแคมเปญที่เสนอ');
+
+            /**
+             * สำหรับลูกค้าที่สนใจซื้อรถ.
+             */
+
+            $table->unsignedInteger('customer_id')->nullable();
+            $table->foreign('customer_id')->references('id')->on('customers');
+
+            /**
+             * อื่นๆ.
+             */
+
             $table->timestamps();
         });
     }

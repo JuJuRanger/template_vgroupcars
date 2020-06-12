@@ -26,5 +26,6 @@ $factory->define(Salecar::class, function (Faker $faker) {
         'salecar_howlongused' => $faker->numberBetween($min = 1, $max = 20),
         'salecar_cusrequest_saleprice' => $faker->randomFloat($nbMaxDecimals = -3, $min = 50000, $max = 300000),
         'salecar_startprprice' => $faker->randomFloat($nbMaxDecimals = -3, $min = 50000, $max = 300000),
+        'customer_id' => factory(App\Model\Customer::class),
     ];
 });
